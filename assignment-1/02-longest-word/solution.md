@@ -2,7 +2,10 @@
 
 ## Approach
 
-_Describe your approach here._
+create variable set to none to track longest word.
+Split the text by spaces and check each word.if longer than the current then save it
+then output the final longest word
+
 
 ## Edge cases handled
 
