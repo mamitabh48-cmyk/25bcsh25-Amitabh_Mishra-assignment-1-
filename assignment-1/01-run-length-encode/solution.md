@@ -2,7 +2,6 @@
 
 ## Approach
 
-_Describe your approach here._
 Iterates through each character in the input string.
 If the last tuple in the result vector has the same character, it increments the count.
 Otherwise, it pushes a new (char, 1) tuple.
