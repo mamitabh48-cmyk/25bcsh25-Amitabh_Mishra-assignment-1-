@@ -2,7 +2,7 @@
 
 ## Approach
 
-_Describe your approach here._
+It doubles every integer in the vector using a mutable iterator then splits the collection into two mutable slices at the specified index.
 
 ## Edge cases handled
 
