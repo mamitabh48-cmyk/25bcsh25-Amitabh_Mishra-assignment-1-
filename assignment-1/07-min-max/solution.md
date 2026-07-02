@@ -2,7 +2,7 @@
 
 ## Approach
 
-_Describe your approach here._
+It returns None if the slice is empty otherwise iterates through the array to track and update the minimum and maximum values found.
 
 ## Edge cases handled
 
