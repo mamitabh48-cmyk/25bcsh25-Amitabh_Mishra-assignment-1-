@@ -1,8 +1,7 @@
 # Solution notes: Inventory
 
 ## Approach
-
-_Describe your approach here._
+It merges a restocking list into an existing vector by updating matching item quantities or appending new ones then formats the collection into a summary string.
 
 ## Edge cases handled
 
