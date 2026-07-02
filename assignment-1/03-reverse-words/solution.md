@@ -2,7 +2,8 @@
 
 ## Approach
 
-_Describe your approach here._
+The function splits the string into words,reverses their order,
+collects them into a vector and joins them back with spaces.
 
 ## Edge cases handled
 
