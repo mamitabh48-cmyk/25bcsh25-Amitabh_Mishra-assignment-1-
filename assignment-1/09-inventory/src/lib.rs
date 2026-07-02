@@ -2,13 +2,26 @@ pub fn restock(
     inventory: Vec<(String, u32)>,
     more: Vec<(String, u32)>,
 ) -> Vec<(String, u32)> {
-    let _ = (inventory, more);
-    todo!("implement restock")
+    let mut new_inventory = inventory;
+
+    for (item, quantity) in more {
+        // Find if the item already exists in the inventory
+        if let Some(existing) = new_inventory.iter_mut().find(|slot| slot.0 == item) {
+            existing.1 += quantity; // Add to existing quantity
+        } else {
+            new_inventory.push((item, quantity)); // Add new item
+        }
+    }
+
+    new_inventory
 }
 
 pub fn summary(inventory: &[(String, u32)]) -> String {
-    let _ = inventory;
-    todo!("implement summary")
+    inventory
+        .iter()
+        .map(|(item, quantity)| format!("{}: {}", item, quantity))
+        .collect::<Vec<String>>()
+        .join("\n")
 }
 
 #[cfg(test)]

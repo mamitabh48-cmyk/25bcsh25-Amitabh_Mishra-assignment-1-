@@ -1,8 +1,12 @@
 pub fn split_and_double(xs: &mut Vec<i32>, mid: usize) -> (&mut [i32], &mut [i32]) {
-    let _ = (xs, mid);
-    todo!("implement split_and_double")
-}
+    // Step 1: Double every number in the list
+    for x in xs.iter_mut() {
+        *x = *x * 2; // Look at each number and multiply it by 2
+    }
 
+    // Step 2: Split the list at the 'mid' index
+    xs.split_at_mut(mid)
+}
 #[cfg(test)]
 mod tests {
     use super::*;

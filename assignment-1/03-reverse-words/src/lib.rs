@@ -1,9 +1,12 @@
 pub fn reverse_words(sentence: &str) -> String {
-    let mut words: Vec<&str>=sentence.split_whitespace().collect();
-    words.reverse();
-    words.join(" ");
-    
+    sentence
+        .split_whitespace()
+        .rev()
+        .collect::<Vec<&str>>()
+        .join(" ")
 }
+    
+  
 
 #[cfg(test)]
 mod tests {

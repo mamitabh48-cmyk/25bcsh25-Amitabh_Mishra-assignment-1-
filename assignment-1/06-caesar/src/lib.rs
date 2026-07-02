@@ -1,8 +1,20 @@
 pub const ALPHABET: &str = "abcdefghijklmnopqrstuvwxyz";
 
 pub fn caesar(input: &str, shift: i32) -> String {
-    let _ = (input, shift);
-    todo!("implement caesar")
+    input.chars().map(|c| {
+        if c.is_ascii_lowercase() {
+            let base = b'a' as i32;
+            // rem_euclid handles both negative shifts (-1) and large wraps (27) perfectly
+            let offset = (c as i32 - base + shift).rem_euclid(26);
+            (base + offset) as u8 as char
+        } else if c.is_ascii_uppercase() {
+            let base = b'A' as i32;
+            let offset = (c as i32 - base + shift).rem_euclid(26);
+            (base + offset) as u8 as char
+        } else {
+            c // Leaves spaces, punctuation, and numbers untouched
+        }
+    }).collect()
 }
 
 #[cfg(test)]

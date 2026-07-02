@@ -1,14 +1,34 @@
-pub fn group_anagrams(words: &[String]) -> Vec<Vec<String>> {
-    let _ = words;
-    todo!("implement group_anagrams")
+use std::collections::HashMap;
+
+pub fn group_anagrams(words: Vec<String>) -> Vec<Vec<String>> {
+    let mut map: HashMap<String, Vec<String>> = HashMap::new();
+    
+    for word in words {
+        // Sort the characters to create a unique key for anagrams
+        let sorted_word: String = sort_str(&word);
+        
+        // Group the original word under that key
+        map.entry(sorted_word)
+            .or_insert_with(Vec::new)
+            .push(word); // Removed .clone() since 'word' ownership is consumed here
+    }
+    
+    // Convert the map values into the required return format
+    map.into_values().collect()
 }
 
+// Helper function to sort characters in a string slice
+fn sort_str(s: &str) -> String {
+    let mut chars: Vec<char> = s.chars().collect();
+    chars.sort_unstable();
+    chars.into_iter().collect()
+}
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    fn s(xs: &[&str]) -> Vec<String> {
-        xs.iter().map(|x| x.to_string()).collect()
+    fn strs(s: &[&str]) -> Vec<String> {
+        s.iter().map(|x| x.to_string()).collect()
     }
 
     fn sort_groups(mut v: Vec<Vec<String>>) -> Vec<Vec<String>> {

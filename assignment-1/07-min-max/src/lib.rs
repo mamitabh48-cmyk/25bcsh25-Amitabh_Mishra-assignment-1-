@@ -1,8 +1,13 @@
 pub fn min_max(xs: &[i32]) -> Option<(i32, i32)> {
-    let _ = xs;
-    todo!("implement min_max")
+    if xs.is_empty() {
+        return None;
+    }
+    
+    let min = *xs.iter().min()?;
+    let max = *xs.iter().max()?;
+    
+    Some((min, max))
 }
-
 #[cfg(test)]
 mod tests {
     use super::*;
