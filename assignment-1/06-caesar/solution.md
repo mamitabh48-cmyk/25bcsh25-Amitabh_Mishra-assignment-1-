@@ -2,7 +2,7 @@
 
 ## Approach
 
-_Describe your approach here._
+It maps over each character while preserving their casing using modular arithmetic and leaves symbols,spaces and numbers completely untouched.
 
 ## Edge cases handled
 
