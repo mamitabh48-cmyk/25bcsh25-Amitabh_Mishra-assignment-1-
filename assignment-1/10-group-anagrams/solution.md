@@ -2,7 +2,7 @@
 
 ## Approach
 
-_Describe your approach here._
+It uses sorted characters as a HashMap key to group anagram words into vectors,returning the values as a nested collection.
 
 ## Edge cases handled
 
