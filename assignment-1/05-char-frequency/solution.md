@@ -2,7 +2,7 @@
 
 ## Approach
 
-_Describe your approach here._
+It counts character occurences using a HashMap,converts the results into a vector of key-value tuples,and sorts them alphabetically by the character.
 
 ## Edge cases handled
 
