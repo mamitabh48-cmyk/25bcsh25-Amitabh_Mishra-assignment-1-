@@ -2,7 +2,7 @@
 
 ## Approach
 
-_Describe your approach here._
+It iterates through the string,replaces all uppercase and lowercase vowels with an asterisk(*) and modifies the input string in place
 
 ## Edge cases handled
 
